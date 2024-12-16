@@ -45,6 +45,21 @@ Provinsi Kalimantan Selatan memiliki banyak destinasi wisata dan juga keanekarag
 | 5   | longitude   | double             |
 
 
+## Tampilan Home
+![Tampilan WebGIS](index.png)
+
+## Tampilan About
+![Tampilan WebGIS](about.png)
+## Tampilan WebGIS
+![Tampilan WebGIS](webgis.png)
+
+## Penambahan Data
+![Penambahan Data](tambahdata.png)
+
+## Data Wisata
+![Data Wisata](wisata.png)
+
+
 
 ## Pengembang
 **Praja Agung Kurniawan - 23/515553/SV/22572**
