@@ -50,6 +50,7 @@ Provinsi Kalimantan Selatan memiliki banyak destinasi wisata dan juga keanekarag
 
 ## Tampilan About
 ![Tampilan WebGIS](about.png)
+
 ## Tampilan WebGIS
 ![Tampilan WebGIS](webgis.png)
 
@@ -59,8 +60,10 @@ Provinsi Kalimantan Selatan memiliki banyak destinasi wisata dan juga keanekarag
 ## Data Wisata
 ![Data Wisata](wisata.png)
 
+## Tampilan Database
+![Tampilan WebGIS](database.png)
 
-
-## Pengembang
+## Author
 **Praja Agung Kurniawan - 23/515553/SV/22572**
+**Responsi PGWEB A **
 
