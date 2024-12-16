@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <style>
+        .html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        p {
+            color: black;
+        }
+
+        .navbar-p {
+            background-color: #90afc5;
+            /* Warna pink */
+            padding-top: 15px;
+            padding-bottom: 0px;
+            text-align: center;
+            overflow: hidden;
+            font-family: Helvetica bold;
+            font-weight: 100;
+            text-justify: inherit;
+            padding-bottom: 15px;
+
+        }
+
+        .intro {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .layar-penuh,
+        .navbar,
+        header,
+        main {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: relative;
+            height: 100vh;
+            /* Mengatur tinggi header sesuai dengan tinggi layar */
+            overflow: hidden;
+            /* Menyembunyikan bagian video yang keluar dari area header */
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            /* Memusatkan video */
+            z-index: -1;
+            /* Menempatkan video di belakang konten */
+        }
+
+        .carousel {
+            width: 100%;
+        }
+
+        /* Menjadikan teks pada paragraf rata kanan-kiri */
+        .text-justify {
+            text-align: justify;
+            margin-left: 30px;
+        }
+
+        .btn:active {
+            color: black;
+            /* Text color when clicked */
+        }
+
+        #cardContainerWrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            /* Sembunyikan scroll horizontal */
+        }
+
+        #cardContainer {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+            /* Tambahkan animasi saat geser */
+        }
+
+        #container {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            /* Pastikan setiap kartu memiliki ukuran tetap */
+        }
+    </style>
+    <title>KARSA</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-p fixed-top">
+        <div class="container text-center">
+            <img src="asset/logo.png" alt="" style="width: 100px;">
+            <a class="navbar-brand" href="#home" style="color: aliceblue;">KARSA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#home" style="color: aliceblue;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutus" style="color: aliceblue;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#wisata" style="color: aliceblue;">Wisata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.php" style="color: aliceblue;">WebGIS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php" style="color: aliceblue;">Tambah Wisata</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layar-penuh">
+        <header id="home" class="position-relative">
+            <div class="overlay"></div>
+            <video autoplay muted loop>
+                <source src="asset/bg-video.mp4" type="video/mp4" />
+            </video>
+            <div class="intro text-center position-relative" style="top: 50%; transform: translateY(5%); color: #fff;">
+                <h3 class="" style="font-size: 75px;">KARSA</h3>
+                <p style="color: #fff;"> Discover the Hidden Paradise of South Kalimantan – Welcome to KARSA</p>
+                <p>
+                    <a href="#aboutus" class="btn" style="background-color: #90afc5; color: #fff;">Selengkapnya</a>
+                </p>
+            </div>
+        </header>
+        <main>
+        </main>
+    </div>
+    <br>
+    <br>
+    <section id="aboutus" class="about-section text-center pb-5">
+        <div class="container">
+            <div class="col-12 p-4">
+                <h2 class="display-4 text-center" style="color: #90afc5;">About KARSA</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Kolom untuk Paragraf -->
+            <div class="col-12 col-md-6">
+                <h3 class="display text-black">Website</h3>
+                <p class="text-justify">Selamat datang di KARSA – Kalimantan Asri Rimba Surga Alam, sebuah
+                    platform WebGIS yang membawa Anda menjelajahi keindahan alam Kalimantan Selatan. Melalui teknologi
+                    terkini, KARSA menawarkan akses interaktif untuk menjelajahi hutan tropis yang luas, sungai yang
+                    jernih, serta berbagai destinasi alam yang mempesona. Temukan informasi lengkap tentang lokasi
+                    wisata, rute perjalanan, dan keanekaragaman hayati yang terdapat di setiap sudut Kalimantan Selatan,
+                    semuanya dalam satu genggaman tangan.</p>
+                <p class="text-justify">Dengan KARSA, setiap perjalanan ke alam Kalimantan Selatan menjadi lebih
+                    mudah dan menyenangkan. Platform ini memberikan panduan navigasi yang jelas dan akurat, memungkinkan
+                    pengunjung untuk menemukan lokasi-lokasi tersembunyi yang menawarkan keindahan luar biasa. Nikmati
+                    pengalaman berbasis peta yang memungkinkan Anda untuk menjelajahi berbagai destinasi wisata alam,
+                    dari pegunungan yang asri hingga pantai yang menakjubkan, semuanya disajikan dalam bentuk peta
+                    interaktif yang mudah digunakan.</p>
+                <p class="text-justify">Tak hanya itu, KARSA juga memberikan informasi tentang keanekaragaman flora
+                    dan fauna yang ada di Kalimantan Selatan. Anda dapat melihat titik-titik lokasi yang menjadi rumah
+                    bagi berbagai spesies langka, serta mempelajari lebih lanjut tentang upaya pelestarian alam yang
+                    dilakukan di kawasan ini. Dengan KARSA, perjalanan Anda bukan hanya sekadar wisata, tetapi juga
+                    sebuah petualangan edukatif yang menghubungkan Anda dengan alam lebih dalam.</p>
+            </div>
+
+            <!-- Kolom untuk Carousel -->
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"
+                    style="width: 90%; max-width: 500px;">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="asset/pasar1.jpg" class="d-block w-100 img-fluid" alt="pasar">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="asset/bukittelang.jpg" class="d-block w-100 img-fluid" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="asset/airterjun.jpg" class="d-block w-100 img-fluid" alt="...">
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wisata">
+        <div class="col-12">
+            <h4 class="display-4 text-center" style="color: #90afc5;">WISATA ALAM</h4>
+        </div>
+        <div class="container my-4">
+            <div class="position-relative">
+                <!-- Scrollable Container -->
+                <div class="overflow-hidden" id="cardContainerWrapper" style="width: 100%;">
+                    <div class="d-flex" id="cardContainer">
+                        <!-- Cards -->
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/goanbatuhapu.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Goa Batu Hapu</p>
+                                <p class="card-text" style="text-align: justify;">Goa Batu Hapu adalah destinasi wisata
+                                    alam yang menawarkan pengalaman berbeda bagi para pengunjung yang mencari
+                                    petualangan dan keindahan alam. Dengan formasi batuan yang menakjubkan dan suasana
+                                    yang tenang, Goa Batu Hapu menjadi pilihan yang tepat untuk menikmati keajaiban alam
+                                    Kalimantan Selatan yang masih tersembunyi.</p>
+                            </div>
+                        </div>
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/pasar1.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Pasar Terapung Lok Baintan</p>
+                                <p class="card-text" style="text-align: justify;">Destinasi wisata yang menawarkan
+                                    pengalaman tradisional yang autentik. Keunikan pasar ini, yang melibatkan interaksi
+                                    jual beli di atas perahu, menciptakan suasana yang sangat khas dan tidak dapat
+                                    ditemukan di tempat lain. Pasar ini tidak hanya menjadi pusat perdagangan, tetapi
+                                    juga sebagai warisan budaya yang terus dilestarikan oleh masyarakat Banjar.</p>
+                            </div>
+                        </div>
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/liangtapah.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Goa Liang Tapah</p>
+                                <p class="card-text" style="text-align: justify;">Goa Liang Tapah adalah destinasi
+                                    wisata alam yang menawarkan petualangan eksotis dengan formasi batuan yang indah dan
+                                    ekosistem yang terjaga. Sebagai salah satu keajaiban alam Kalimantan Selatan, Goa
+                                    Liang Tapah memberikan pengalaman yang tak terlupakan bagi para pengunjung yang
+                                    ingin merasakan keindahan alam yang masih alami.</p>
+                            </div>
+                        </div>
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/danauperangon.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Danau Biru Perangon</p>
+                                <p class="card-text" style="text-align: justify;">Danau Biru Perangon adalah destinasi
+                                    wisata alam yang menawarkan keindahan dan kedamaian yang sangat cocok bagi
+                                    pengunjung yang ingin melarikan diri dari hiruk-pikuk kota. Dengan suasana yang
+                                    masih alami, danau ini memberikan pengalaman yang menyegarkan, sekaligus
+                                    memperkenalkan pesona alam Kalimantan yang menakjubkan.</p>
+                            </div>
+                        </div>
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/hutanpinus.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Hutan Pinus Mentaos</p>
+                                <p class="card-text" style="text-align: justify;">Hutan Pinus Mentaos adalah tempat yang
+                                    tepat bagi para pencinta alam untuk menikmati keindahan hutan pinus yang rimbun,
+                                    beristirahat, dan melakukan berbagai aktivitas outdoor. Hutan ini menawarkan
+                                    pengalaman wisata alam yang menyegarkan, menjadikannya destinasi yang wajib
+                                    dikunjungi bagi siapa saja yang ingin merasakan kedamaian alam.</p>
+                            </div>
+                        </div>
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/bukittelang.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Bukit Telang</p>
+                                <p class="card-text" style="text-align: justify;">Bukit Telang adalah tempat yang
+                                    sempurna untuk menikmati keindahan alam Kalimantan Selatan, dengan pemandangan
+                                    spektakuler dan suasana yang damai. Aktivitas seperti mendaki bukit, menikmati
+                                    sunrise, dan fotografi alam menjadikan Bukit Telang sebagai destinasi yang menarik
+                                    bagi wisatawan yang mencari pengalaman alam dari ketinggian.</p>
+                            </div>
+                        </div>
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/bukittabuan.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Bukit Tabuan</p>
+                                <p class="card-text" style="text-align: justify;">Bukit Tabuan menawarkan pengalaman
+                                    wisata alam yang menakjubkan dan pemandangan yang indah, jalur pendakian yang
+                                    menantang, dan udara yang sejuk. Tempat ini sangat cocok bagi para pecinta alam dan
+                                    pengunjung yang mencari petualangan. Jika Anda berkunjung ke Kalimantan Selatan,
+                                    Bukit Tabuan adalah destinasi alam yang wajib untuk dikunjungi.</p>
+                            </div>
+                        </div>
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/airterjun.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Air Terjun Mandin Damar</p>
+                                <p class="card-text" style="text-align: justify;">Air Terjun Mandin Damar adalah
+                                    destinasi wisata alam yang menawarkan keindahan luar biasa, pemandangan yang
+                                    menenangkan, dan suasana yang menyegarkan. Trekking yang menantang dan pemandangan
+                                    air terjun yang memukau, tempat ini adalah pilihan yang sempurna bagi wisatawan yang
+                                    ingin menikmati keindahan alam Kalimantan Selatan.</p>
+                            </div>
+                        </div>
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/pulaupamalikan.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Pulau Pamalikan</p>
+                                <p class="card-text" style="text-align: justify;">Pulau Pamalikan adalah destinasi
+                                    wisata tropis yang menawarkan keindahan alam yang masih asri dan belum banyak
+                                    terjamah. Dengan pemandangan laut yang jernih, pasir putih yang lembut, serta
+                                    beragam aktivitas alam yang menyenangkan, pulau ini cocok untuk wisatawan yang
+                                    mencari ketenangan, petualangan, dan keindahan alam. </p>
+                            </div>
+                        </div>
+                        <div class="card mx-2" style="width: 18rem;">
+                            <img src="asset/pantainbirah.jpg" class="card-img-top" alt="..."
+                                style="height: 14rem; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text" style="text-align: center;">Pantai Birah Birahan</p>
+                                <p class="card-text" style="text-align: justify;">Pantai Birah-Birahan adalah destinasi
+                                    wisata bahari yang menawarkan keindahan alam yang masih alami dan asri. Dengan pasir
+                                    putih, air laut yang jernih, serta suasana yang tenang dan sepi, pantai ini cocok
+                                    untuk wisatawan yang mencari tempat untuk bersantai, menikmati pemandangan, atau
+                                    beraktivitas di alam terbuka.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tombol Navigasi -->
+                <button class="btn position-absolute top-50 start-0 translate-middle-y" id="scrollLeft" style="background-color: #90afc5;">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="btn position-absolute top-50 end-0 translate-middle-y" id="scrollRight" style="background-color: #90afc5;">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--Author-->
+    <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="infoModal">Author's Information</h1>
+                    <button type="button" class="btn-close" style="color: aliceblue;" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table" table-striped>
+                        <tr>
+                        <tr>
+                            <th>Nama</th>
+                            <td>Pradja Agung Kurniawan</td>
+                        </tr>
+                        <tr>
+                            <th>Nim</th>
+                            <td>23/515553/SV/22572</td>
+                        </tr>
+                        <tr>
+                            <th>Kelas</th>
+                            <td>PGWEB A</td>
+                        </tr>
+                        <tr>
+                            <th>Linkedin</th>
+                            <td><a href="https://www.linkedin.com/in/pradjaak/" target="_blank"> Pradja Agung
+                                    Kurniawan</a></td>
+                        </tr>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Feature Modal-->
+    <!-- Feature Modal -->
+    <div class="modal fade" id="featureModal" tabindex="-1" aria-labelledby="featureModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="featureModalTitle">Feature Pembuat</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="featureModalBody">
+                    <!-- Content dynamically injected here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pt-5 pb-4" style="background-color: #90afc5;">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #07575b">TUJUAN</h5>
+                    <p class="text-white text-justify">Responsi Mata Kuliah Praktikum Pemrograman Geospasial Website.
+                        Bertujuan memudahkan para wisatawan mengakses wisata alam di Provinsi Kalimantan Selatan</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #07575b">Sumber Data</h5>
+                    <p>
+                        <a href="https://tanahair.indonesia.go.id/portal-web/" class="text-white" style="text-decoration: none;">InaGeoportal</a>
+                    </p>
+                    <p>
+                        <a href="https://geoportal.kalselprov.go.id/WebPortal/" class="text-white" style="text-decoration: none;">KalselProv.go.id</a>
+                    </p>
+                    <p>
+                        <a href="https://indonesia.tripcanvas.co/id/kalimantan/tempat-wisata-kalimantan-selatan/#google_vignette" class="text-white" style="text-decoration: none;">Wisata Alam Kalsel</a>
+                    </p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #07575b">MENU WEBSITE</h5>
+
+                    <p>
+                        <a href="#wisata" class="text-white" style="text-decoration: none;">WISATA</a>
+                    </p>
+                    <p>
+                        <a href="map.php" class="text-white" style="text-decoration: none;">WEBGIS</a>
+                    </p>
+                    <p>
+                        <a href="index.php" class="text-white" style="text-decoration: none;">WISATA BARU</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" style="text-align: left;">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="text-align: center; color: #07575b ">Author
+                    </h5>
+                    <p style="color: aliceblue;">
+                        <i class="text-white fas fa-envelope mr-3"></i>
+                        <a href="mailto:myzenaaa@gmail.com" style="color: aliceblue; text-decoration: none;">
+                            myzenaaa@gmail.com
+                        </a>
+                    </p>
+                    <p style="color: aliceblue;">
+                        <i class="text-white fab fa-instagram mr-3"></i>
+                        <a href="https://instagram.com/pradjaak_" target="_blank"
+                            style="color: aliceblue; text-decoration: none;">
+                            @Pradjaak_
+                        </a>
+                    </p>
+                    <p style="color: aliceblue;">
+                        <i class="text-white fab fa-github mr-3"></i>
+                        <a href="https://github.com/MyZenaa" target="_blank"
+                            style="color: aliceblue; text-decoration: none;">
+                            github.com/MyZenaa
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-12 text-center">
+                    <p class="text-white">Copyright 2024 All rights reserved by :
+                        <a href="#copyright" data-bs-toggle="modal" data-bs-target="#infoModal"
+                            style="text-decoration: none;">
+                            <strong class="" style="color: #07575b;">Pradja Agung Kurniawan -
+                                23/515553/SV/22572</strong>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+
+                // Cek apakah tautan menuju halaman lain (mengandung .php atau http/https)
+                if (href.includes('.php') || href.startsWith('http')) {
+                    return; // Biarkan navigasi default berjalan
+                }
+
+                e.preventDefault();
+
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100, // 100px adalah tinggi offset navbar
+                        behavior: 'smooth' // Smooth scrolling
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const cardContainer = document.getElementById('cardContainer');
+        const scrollLeft = document.getElementById('scrollLeft');
+        const scrollRight = document.getElementById('scrollRight');
+
+        const cards = document.querySelectorAll('.card');
+        const cardWidth = cards[0].offsetWidth + 16; // Lebar kartu + margin
+        let scrollPosition = cardWidth; // Mulai dari kartu pertama yang asli
+
+        // Set posisi awal (menampilkan kartu pertama yang asli)
+        cardContainer.style.transform = `translateX(-${scrollPosition}px)`;
+
+        // Klik tombol kiri
+        scrollLeft.addEventListener('click', () => {
+            scrollPosition -= cardWidth; // Geser ke kiri
+            cardContainer.style.transform = `translateX(-${scrollPosition}px)`;
+            cardContainer.style.transition = 'transform 0.4s ease-in-out';
+
+            // Reset ke akhir jika mencapai duplikat di awal
+            if (scrollPosition <= 0) {
+                setTimeout(() => {
+                    scrollPosition = cardWidth * (cards.length - 2); // Lompat ke kartu terakhir yang asli
+                    cardContainer.style.transition = 'none'; // Hilangkan animasi saat reset
+                    cardContainer.style.transform = `translateX(-${scrollPosition}px)`;
+                }, 400); // Waktu harus sesuai dengan durasi animasi
+            }
+        });
+
+        // Klik tombol kanan
+        scrollRight.addEventListener('click', () => {
+            scrollPosition += cardWidth; // Geser ke kanan
+            cardContainer.style.transform = `translateX(-${scrollPosition}px)`;
+            cardContainer.style.transition = 'transform 0.4s ease-in-out';
+
+            // Reset ke awal jika mencapai duplikat di akhir
+            if (scrollPosition >= cardWidth * (cards.length - 1)) {
+                setTimeout(() => {
+                    scrollPosition = cardWidth; // Lompat ke kartu pertama yang asli
+                    cardContainer.style.transition = 'none'; // Hilangkan animasi saat reset
+                    cardContainer.style.transform = `translateX(-${scrollPosition}px)`;
+                }, 400); // Waktu harus sesuai dengan durasi animasi
+            }
+        });
+    </script>
+</body>
+
+</html>
